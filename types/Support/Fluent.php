@@ -10,6 +10,12 @@ assertType('Illuminate\Support\Fluent<string, string>', new Fluent(['name' => 'T
 assertType('Illuminate\Support\Fluent<string, int>', new Fluent(['age' => 25]));
 assertType('Illuminate\Support\Fluent<string, User>', new Fluent(['user' => new User]));
 
+assertType('Illuminate\Support\Fluent<string, int|string|User>', $fluent);
+assertType('Illuminate\Support\Fluent<string, string>', new Fluent(['name' => 'Taylor']));
+assertType('Illuminate\Support\Fluent<string, int>', new Fluent(['age' => 25]));
+assertType('Illuminate\Support\Fluent<string, User>', new Fluent(['user' => new User]));
+
+
 assertType('int|string|User|null', $fluent['name']);
 assertType('int|string|User|null', $fluent['age']);
 assertType('int|string|User|null', $fluent['age']);
